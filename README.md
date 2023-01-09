@@ -46,7 +46,7 @@ Watcher Process finished. Restarting on file change...
 An alternative to avoid the static import prolem is to dynamically
 import the editor module only on the client. However, this also fails
 in Safari, and in some cases on Chrome due to a CORS errror. It's
-unclear if this is a problem with Monaco, Fresh, esm.sh or a
+unclear if this is a problem with Monaco, Fresh, [esm.sh][] or a
 combination of all three together.
 
 To reproduce this issue, cd into the `dynamic-import` directory before
@@ -66,4 +66,4 @@ In your developer console.
 [Monaco]: https://microsoft.github.io/monaco-editor
 [VSCode]: https://code.visualstudio.com
 [Fresh]: https://fresh.deno.dev
-[esm.sh][https://esm.sh]
+[esm.sh]: https://esm.sh
