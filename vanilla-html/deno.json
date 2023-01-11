@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "start": "deno run --watch=index.html -A start.ts"
+  },
+  "lint": {
+    "rules": {
+      "exclude": ["prefer-const", "require-yield", "no-inner-declarations"]
+    }
+  }
+}

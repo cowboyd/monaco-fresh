@@ -43,6 +43,9 @@ Watcher Process finished. Restarting on file change...
 
 ## Dynamic Import
 
+> **Update** The problem was one of caching. Clearing all caches and reloading, solved the problem.
+
+
 An alternative to avoid the static import prolem is to dynamically
 import the editor module only on the client. However, this also fails
 in Safari, and in some cases on Chrome due to a CORS errror. It's
@@ -62,6 +65,11 @@ monaco-editor.js:1          Failed to load resource: net::ERR_FAILED
 ```
 
 In your developer console.
+
+## Vanilla HTML
+
+For reference, a vanilla version of Monaco is included in the `vanilla-html/`
+directory
 
 [Monaco]: https://microsoft.github.io/monaco-editor
 [VSCode]: https://code.visualstudio.com

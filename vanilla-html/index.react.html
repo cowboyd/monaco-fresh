@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <h1>Hello World</h1>
+    <div id="container" style="width: 800px; height: 600px; border: 1px solid #ccc"></div>
+  </body>
+  <script type="module">
+   import { createRoot } from 'https://esm.sh/react-dom/client';
+   import { createElement } from 'https://esm.sh/react';
+   import MonacoEditor from 'https://esm.sh/@monaco-editor/react';
+   import editorWorker from "https://esm.sh/monaco-editor/esm/vs/editor/editor.worker?worker";
+   import jsonWorker from "https://esm.sh/monaco-editor/esm/vs/language/json/json.worker?worker";
+
+   self.MonacoEnvironment = {
+     getWorker: function (moduleId, label) {
+       if (label === 'editorWorkerService') {
+         return editorWorker();
+       } else if (label === "json") {
+         return jsonWorker();
+       }
+     }
+   }
+   let container = document.getElementById('container');
+   let root = createRoot(container);
+   root.render(createElement(MonacoEditor, {
+     value: JSON.stringify({hello: "world"}, null, 2),
+     language: "json",
+   }, null));
+  </script>
+</html>
